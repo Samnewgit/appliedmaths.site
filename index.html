@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources</title>
+
+    <!-- Font Import: Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -12,11 +18,16 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            /* Using Space Grotesk font with a standard sans-serif fallback */
+            font-family: 'Space Grotesk', sans-serif;
             background-color: #FFFFFF;
             color: #000000;
             padding: 30px 15px;
             line-height: 1.5;
+
+            /* Dithered Background Effect */
+            /* This creates a subtle 2x2 pixel pattern for a minimal, retro feel */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='1' height='1' fill='rgba(0,0,0,0.05)'/%3E%3Crect x='1' y='1' width='1' height='1' fill='rgba(0,0,0,0.05)'/%3E%3C/svg%3E");
         }
         
         .container {
@@ -27,8 +38,17 @@
         h1 {
             font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 8px;
         }
         
         .resource-list {
@@ -38,10 +58,11 @@
         .resource-item {
             margin-bottom: 15px;
             padding-bottom: 15px;
-            border-bottom: 1px solid #000000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         }
         
-        .resource-item:last-child {
+        /* This ensures the last item IN EACH LIST has no bottom border */
+        .resource-list .resource-item:last-child {
             border-bottom: none;
         }
         
@@ -49,46 +70,42 @@
             display: block;
             color: #000000;
             text-decoration: none;
-            transition: opacity 0.2s;
+            transition: opacity 0.2s ease-in-out;
         }
         
         .resource-link:hover {
-            opacity: 0.7;
+            opacity: 0.6;
         }
         
         .file-name {
             font-weight: 500;
-            margin-bottom: 4px;
             word-break: break-word;
-        }
-        
-        .file-title {
-            font-size: 0.875rem;
-            opacity: 0.8;
         }
         
         /* Mobile-specific adjustments */
         @media (max-width: 600px) {
             body {
-                padding: 20px 10px;
+                padding: 20px 15px;
             }
             
             h1 {
                 font-size: 1.5rem;
-                margin-bottom: 20px;
+                margin-bottom: 25px;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+                margin-top: 30px;
+                margin-bottom: 15px;
             }
             
             .resource-item {
                 margin-bottom: 12px;
                 padding-bottom: 12px;
             }
-            
-            .file-title {
-                font-size: 0.8rem;
-            }
         }
         
-        /* Touch-friendly adjustments */
+        /* Touch-friendly adjustments for a better mobile experience */
         @media (hover: none) {
             .resource-link:active {
                 opacity: 0.5;
@@ -98,42 +115,58 @@
 </head>
 <body>
     <div class="container">
-        <h1>Class 12 Applied Maths Question Bank </h1>
+        <h1>Class 12 Applied Maths Question Bank</h1>
         
+        <!-- Questions Section -->
+        <h2>Questions</h2>
         <ul class="resource-list">
             <li class="resource-item">
                 <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/1.Modulo%20Operator.pdf" target="_blank" class="resource-link">
                     <div class="file-name">1. Numeral Applications</div>
                 </a>
             </li>
-
             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/2.Differentiation.pdf"  class="resource-link">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/2.Differentiation.pdf" target="_blank" class="resource-link">
                     <div class="file-name">2. Differentiation & Its Applications</div>
                 </a>
             </li>
-
             <li class="resource-item">
                 <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/3.Probability.pdf" target="_blank" class="resource-link">
                     <div class="file-name">3. Probability</div>
                 </a>
             </li>
-
             <li class="resource-item">
                 <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/4.Inferential%20Stats.pdf" target="_blank" class="resource-link">
                     <div class="file-name">4. Inferential Stats</div>
                 </a>
             </li>
-            
-            
+        </ul>
+
+        <!-- Answers Section -->
+        <h2>Answers</h2>
+        <ul class="resource-list">
+            <!-- IMPORTANT: Please verify these links and change them if necessary -->
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answer/1.Modulo%20Operator.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">1. Numeral Applications - Answer Key</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answer/2.Differentiation.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">2. Differentiation & Its Applications - Answer Key</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answer/3.Probability.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">3. Probability - Answer Key</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answer/4.Inferential%20Stats.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">4. Inferential Stats - Answer Key</div>
+                </a>
+            </li>
         </ul>
     </div>
 </body>
-
 </html>
-
-
-
-
-
-
