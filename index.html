@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CBSE Class 12 Applied Maths Question Bank</title>
 
-    <!-- Font Import: Space Grotesk -->
+    <!-- Font Imports -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Source+Serif+4:ital,wght@1,400&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -18,15 +18,12 @@
         }
         
         body {
-            /* Using Space Grotesk font with a standard sans-serif fallback */
-            font-family: 'Space Grotesk', sans-serif;
             background-color: #000000;
             color: #FFFFFF;
             padding: 40px 20px;
             line-height: 1.6;
 
             /* Dithered Background Effect on a Dark Background */
-            /* This creates a subtle 2x2 pixel pattern for a minimal, retro feel */
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='1' height='1' fill='rgba(255,255,255,0.05)'/%3E%3Crect x='1' y='1' width='1' height='1' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
         }
         
@@ -36,21 +33,17 @@
         }
         
         h1 {
+            /* Using Space Grotesk for the main heading */
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
             letter-spacing: -1px;
         }
 
-        /* Style for the wavy red underline */
-        .strike {
-            text-decoration: underline;
-            text-decoration-color: red;
-            text-decoration-style: wavy;
-            text-underline-offset: 4px; /* Adjust distance of the line from text */
-        }
-
         .description {
+            /* Using a classic Serif font for the description */
+            font-family: 'Source Serif 4', Georgia, serif;
             font-style: italic;
             color: #cccccc;
             margin-bottom: 8px;
@@ -63,26 +56,29 @@
         }
         
         .resource-item {
+            /* Using IBM Plex Mono for the chapter list */
+            font-family: 'IBM Plex Mono', monospace;
             display: flex;
-            align-items: baseline; /* Aligns text along their baseline */
+            align-items: baseline;
             margin-bottom: 18px;
             font-size: 1.5rem;
+            font-weight: 500;
             color: #00FF00; /* Terminal green */
         }
         
         .question-part {
-            flex-shrink: 0; /* Prevents the question part from shrinking */
+            flex-shrink: 0;
             padding-right: 0.5em;
         }
         
         .dotted-line {
-            flex-grow: 1; /* Takes up all available space */
+            flex-grow: 1;
             border-bottom: 3px dotted #00FF00;
-            transform: translateY(-6px); /* Adjusts vertical alignment */
+            transform: translateY(-6px);
         }
         
         .answer-part {
-            flex-shrink: 0; /* Prevents the answer part from shrinking */
+            flex-shrink: 0;
             padding-left: 0.5em;
         }
 
@@ -119,7 +115,7 @@
             }
         }
         
-        /* Touch-friendly adjustments for a better mobile experience */
+        /* Touch-friendly adjustments */
         @media (hover: none) {
             .question-part:active,
             .answer-part:active {
@@ -130,7 +126,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>CBSE Class 12 Applied <span class="strike">Maths</span> Question Bank</h1>
+        <h1>CBSE Class 12 Applied Maths Question Bank</h1>
         <p class="description">The question bank consist of questions from all Board Questions Papers and Sample Papers from 2022 to 2025</p>
         <p class="description">Utmost care is taken to strictly focus on CBSE syllabus of A.Y. 2025-26</p>
 
