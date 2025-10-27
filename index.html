@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CBSE Class 12 Applied Maths Question Bank</title>
-    
+
     <!-- Font Imports -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Source+Serif+4:ital,wght@1,400&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
-    
+
     <style>
         * {
             margin: 0;
@@ -20,63 +20,66 @@
         body {
             background-color: #000000;
             color: #FFFFFF;
-            font-family: 'Source Serif 4', Georgia, serif;
-            line-height: 1.4;
-            overflow-x: hidden;
+            padding: 40px 20px;
+            line-height: 1.6;
+
+            /* Dithered Background Effect on a Dark Background */
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='1' height='1' fill='rgba(255,255,255,0.05)'/%3E%3Crect x='1' y='1' width='1' height='1' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
         }
         
         .container {
-            max-width: 100%;
-            padding: 10px;
+            max-width: 800px;
             margin: 0 auto;
         }
         
         h1 {
+            /* Using Space Grotesk for the main heading */
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.6rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
         }
-        
+
         .description {
+            /* Using a classic Serif font for the description */
+            font-family: 'Source Serif 4', Georgia, serif;
             font-style: italic;
             color: #cccccc;
-            margin-bottom: 5px;
-            font-size: 0.85rem;
+            margin-bottom: 8px;
+            max-width: 700px;
         }
         
         .resource-list {
             list-style: none;
-            margin-top: 10px;
+            margin-top: 40px;
         }
         
         .resource-item {
+            /* Using IBM Plex Mono for the chapter list */
             font-family: 'IBM Plex Mono', monospace;
             display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
+            align-items: baseline;
+            margin-bottom: 18px;
+            font-size: 1.5rem;
             font-weight: 500;
-            color: #00FF00;
+            color: #00FF00; /* Terminal green */
         }
         
         .question-part {
             flex-shrink: 0;
-            padding-right: 5px;
+            padding-right: 0.5em;
         }
         
         .dotted-line {
             flex-grow: 1;
-            border-bottom: 2px dotted #00FF00;
-            transform: translateY(-4px);
-            margin: 0 3px;
+            border-bottom: 3px dotted #00FF00;
+            transform: translateY(-6px);
         }
         
         .answer-part {
             flex-shrink: 0;
-            padding-left: 5px;
+            padding-left: 0.5em;
         }
 
         .question-part,
@@ -91,7 +94,28 @@
             opacity: 0.7;
         }
         
-        /* Touch-friendly adjustments */
+        /* === MOBILE COMPATIBILITY STYLES === */
+        @media (max-width: 600px) {
+            body {
+                padding: 30px 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+
+            .description {
+                font-size: 0.9rem;
+            }
+
+            .resource-item {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+        }
+        
+        /* Touch-friendly adjustments for a better mobile experience */
         @media (hover: none) {
             .question-part:active,
             .answer-part:active {
@@ -103,8 +127,8 @@
 <body>
     <div class="container">
         <h1>CBSE Class 12 Applied Maths Question Bank</h1>
-        <p class="description">Questions from Board Papers & Sample Papers (2022-2025)</p>
-        <p class="description">Strictly follows CBSE syllabus of A.Y. 2025-26</p>
+        <p class="description">The question bank consist of questions from all Board Questions Papers and Sample Papers from 2022 to 2025</p>
+        <p class="description">Utmost care is taken to strictly focus on CBSE syllabus of A.Y. 2025-26</p>
 
         <ul class="resource-list">
             <li class="resource-item">
@@ -128,12 +152,12 @@
                 <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/determinants.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/2.Differentiation.pdf" target="_blank" class="question-part">5. Differentiation & Applications</a>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/2.Differentiation.pdf" target="_blank" class="question-part">5. Differentiation & Its Applications</a>
                 <span class="dotted-line"></span>
                 <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/2.Differentiation.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/integrals.pdf" target="_blank" class="question-part">6. Integrals & Applications</a>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/integrals.pdf" target="_blank" class="question-part">6. Integrals & Its Applications</a>
                 <span class="dotted-line"></span>
                 <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Integrals.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
