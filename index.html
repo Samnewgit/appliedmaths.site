@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="description" content="CBSE Class 12 Applied Maths Question Bank with questions from 2022-2025 and answers">
-    <meta name="keywords" content="CBSE, Class 12, Applied Maths, Question Bank, 2025-26 syllabus">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CBSE Class 12 Applied Maths Question Bank</title>
     
     <!-- Font Imports -->
@@ -12,466 +10,164 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Source+Serif+4:ital,wght@1,400&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Ctext x='50' y='50' font-family='monospace' font-size='50' fill='%2300FF00' text-anchor='middle' dominant-baseline='middle'%3E12%3C/text%3E%3C/svg%3E">
-    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: rgba(0, 255, 0, 0.2);
-        }
-        
-        :root {
-            --primary-color: #00FF00;
-            --text-color: #FFFFFF;
-            --secondary-text: #cccccc;
-            --bg-color: #000000;
-            --card-bg: rgba(0, 0, 0, 0.7);
-            --transition: all 0.3s ease;
         }
         
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: #000000;
+            color: #FFFFFF;
             font-family: 'Source Serif 4', Georgia, serif;
-            line-height: 1.6;
+            line-height: 1.4;
             overflow-x: hidden;
-            /* Simplified background for better mobile performance */
-            background-image: radial-gradient(circle at 10% 20%, rgba(0, 255, 0, 0.05) 0%, transparent 20%),
-                              radial-gradient(circle at 80% 70%, rgba(0, 255, 0, 0.05) 0%, transparent 20%);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='1' height='1' fill='rgba(255,255,255,0.05)'/%3E%3Crect x='1' y='1' width='1' height='1' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
         }
         
         .container {
             max-width: 100%;
-            padding: 20px 15px;
+            padding: 10px;
             margin: 0 auto;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px 0;
-            position: relative;
-        }
-        
-        .header-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 255, 0, 0.1) 0%, transparent 70%);
-            z-index: -1;
-            border-radius: 10px;
         }
         
         h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-            line-height: 1.2;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
         
         .description {
             font-style: italic;
-            color: var(--secondary-text);
-            margin-bottom: 10px;
-            max-width: 100%;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: #cccccc;
+            margin-bottom: 5px;
+            font-size: 0.85rem;
         }
         
         .resource-list {
             list-style: none;
-            margin-top: 30px;
+            margin-top: 10px;
         }
         
         .resource-item {
-            margin-bottom: 20px;
-            background: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: var(--transition);
-            border: 1px solid rgba(0, 255, 0, 0.1);
-        }
-        
-        .resource-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 255, 0, 0.2);
-            border-color: rgba(0, 255, 0, 0.3);
-        }
-        
-        .resource-content {
-            display: flex;
-            flex-direction: column;
-            padding: 15px;
-        }
-        
-        .question-section {
+            font-family: 'IBM Plex Mono', monospace;
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .chapter-number {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-right: 10px;
-            min-width: 30px;
-        }
-        
-        .question-title {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
             font-weight: 500;
-            color: var(--primary-color);
+            color: #00FF00;
+        }
+        
+        .question-part {
+            flex-shrink: 0;
+            padding-right: 5px;
+        }
+        
+        .dotted-line {
             flex-grow: 1;
+            border-bottom: 2px dotted #00FF00;
+            transform: translateY(-4px);
+            margin: 0 3px;
         }
         
-        .answer-section {
-            display: flex;
-            justify-content: flex-end;
-            border-top: 1px dashed rgba(0, 255, 0, 0.3);
-            padding-top: 10px;
+        .answer-part {
+            flex-shrink: 0;
+            padding-left: 5px;
         }
-        
-        .answer-link {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.9rem;
-            color: var(--primary-color);
+
+        .question-part,
+        .answer-part {
+            color: #00FF00;
             text-decoration: none;
-            padding: 5px 15px;
-            border: 1px solid var(--primary-color);
-            border-radius: 20px;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
+            transition: opacity 0.2s ease-in-out;
         }
         
-        .answer-link:hover {
-            background-color: rgba(0, 255, 0, 0.1);
+        .question-part:hover,
+        .answer-part:hover {
+            opacity: 0.7;
         }
         
-        .answer-link::before {
-            content: "📄";
-            margin-right: 5px;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: var(--secondary-text);
-            font-size: 0.9rem;
-        }
-        
-        /* Mobile-specific styles */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px 10px;
-            }
-            
-            .resource-item {
-                margin-bottom: 15px;
-            }
-            
-            .resource-content {
-                padding: 12px;
-            }
-            
-            .chapter-number {
-                font-size: 1.1rem;
-            }
-            
-            .question-title {
-                font-size: 1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 10px 5px;
-            }
-            
-            header {
-                margin-bottom: 20px;
-                padding: 15px 0;
-            }
-            
-            .resource-item {
-                margin-bottom: 12px;
-            }
-            
-            .resource-content {
-                padding: 10px;
-            }
-            
-            .chapter-number {
-                font-size: 1rem;
-                min-width: 25px;
-            }
-            
-            .question-title {
-                font-size: 0.95rem;
-            }
-            
-            .answer-link {
-                font-size: 0.85rem;
-                padding: 4px 12px;
-            }
-        }
-        
-        /* Touch-friendly interactions */
+        /* Touch-friendly adjustments */
         @media (hover: none) {
-            .resource-item:active {
-                transform: scale(0.98);
-            }
-            
-            .answer-link:active {
-                background-color: rgba(0, 255, 0, 0.2);
+            .question-part:active,
+            .answer-part:active {
+                opacity: 0.5;
             }
         }
-        
-        /* Loading animation */
-        .resource-item {
-            animation: fadeIn 0.5s ease forwards;
-            opacity: 0;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .resource-item:nth-child(1) { animation-delay: 0.05s; }
-        .resource-item:nth-child(2) { animation-delay: 0.1s; }
-        .resource-item:nth-child(3) { animation-delay: 0.15s; }
-        .resource-item:nth-child(4) { animation-delay: 0.2s; }
-        .resource-item:nth-child(5) { animation-delay: 0.25s; }
-        .resource-item:nth-child(6) { animation-delay: 0.3s; }
-        .resource-item:nth-child(7) { animation-delay: 0.35s; }
-        .resource-item:nth-child(8) { animation-delay: 0.4s; }
-        .resource-item:nth-child(9) { animation-delay: 0.45s; }
-        .resource-item:nth-child(10) { animation-delay: 0.5s; }
-        .resource-item:nth-child(11) { animation-delay: 0.55s; }
-        .resource-item:nth-child(12) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="header-bg"></div>
-            <h1>CBSE Class 12 Applied Maths Question Bank</h1>
-            <p class="description">The question bank consists of questions from all Board Questions Papers and Sample Papers from 2022 to 2025</p>
-            <p class="description">Utmost care is taken to strictly focus on CBSE syllabus of A.Y. 2025-26</p>
-        </header>
+        <h1>CBSE Class 12 Applied Maths Question Bank</h1>
+        <p class="description">Questions from Board Papers & Sample Papers (2022-2025)</p>
+        <p class="description">Strictly follows CBSE syllabus of A.Y. 2025-26</p>
 
         <ul class="resource-list">
             <li class="resource-item">
-                <div class="resource-content">
-                    <div class="question-section">
-                        <div class="chapter-number">1.</div>
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/1.Modulo%20Operator.pdf" target="_blank" class="question-title">Numerical Application</a>
-                    </div>
-                    <div class="answer-section">
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/1.Modulo.pdf" target="_blank" class="answer-link">Answers</a>
-                    </div>
-                </div>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/1.Modulo%20Operator.pdf" target="_blank" class="question-part">1. Numerical Application</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/1.Modulo.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <div class="resource-content">
-                    <div class="question-section">
-                        <div class="chapter-number">2.</div>
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Linear%20Inequalities.pdf" target="_blank" class="question-title">Linear Inequalities</a>
-                    </div>
-                    <div class="answer-section">
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Linear%20inequalities.pdf" target="_blank" class="answer-link">Answers</a>
-                    </div>
-                </div>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Linear%20Inequalities.pdf" target="_blank" class="question-part">2. Linear Inequalities</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Linear%20inequalities.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <div class="resource-content">
-                    <div class="question-section">
-                        <div class="chapter-number">3.</div>
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Matrices.pdf" target="_blank" class="question-title">Matrices</a>
-                    </div>
-                    <div class="answer-section">
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/matrices.pdf" target="_blank" class="answer-link">Answers</a>
-                    </div>
-                </div>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Matrices.pdf" target="_blank" class="question-part">3. Matrices</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/matrices.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <div class="resource-content">
-                    <div class="question-section">
-                        <div class="chapter-number">4.</div>
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Determinants.pdf" target="_blank" class="question-title">Determinants</a>
-                    </div>
-                    <div class="answer-section">
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/determinants.pdf" target="_blank" class="answer-link">Answers</a>
-                    </div>
-                </div>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Determinants.pdf" target="_blank" class="question-part">4. Determinants</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/determinants.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <div class="resource-content">
-                    <div class="question-section">
-                        <div class="chapter-number">5.</div>
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/2.Differentiation.pdf" target="_blank" class="question-title">Differentiation & Its Applications</a>
-                    </div>
-                    <div class="answer-section">
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/2.Differentiation.pdf" target="_blank" class="answer-link">Answers</a>
-                    </div>
-                </div>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/2.Differentiation.pdf" target="_blank" class="question-part">5. Differentiation & Applications</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/2.Differentiation.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <div class="resource-content">
-                    <div class="question-section">
-                        <div class="chapter-number">6.</div>
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/integrals.pdf" target="_blank" class="question-title">Integrals & Its Applications</a>
-                    </div>
-                    <div class="answer-section">
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Integrals.pdf" target="_blank" class="answer-link">Answers</a>
-                    </div>
-                </div>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/integrals.pdf" target="_blank" class="question-part">6. Integrals & Applications</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Integrals.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <div class="resource-content">
-                    <div class="question-section">
-                        <div class="chapter-number">7.</div>
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/3.Probability.pdf" target="_blank" class="question-title">Probability</a>
-                    </div>
-                    <div class="answer-section">
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/3.Probability.pdf" target="_blank" class="answer-link">Answers</a>
-                    </div>
-                </div>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/3.Probability.pdf" target="_blank" class="question-part">7. Probability</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/3.Probability.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <div class="resource-content">
-                    <div class="question-section">
-                        <div class="chapter-number">8.</div>
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/4.Inferential%20Stats.pdf" target="_blank" class="question-title">Inferential Stats</a>
-                    </div>
-                    <div class="answer-section">
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/4.inferential%20stats.pdf" target="_blank" class="answer-link">Answers</a>
-                    </div>
-                </div>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/4.Inferential%20Stats.pdf" target="_blank" class="question-part">8. Inferential Stats</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/4.inferential%20stats.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <div class="resource-content">
-                    <div class="question-section">
-                        <div class="chapter-number">9.</div>
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/time-based-data.pdf" target="_blank" class="question-title">Time Based Data</a>
-                    </div>
-                    <div class="answer-section">
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Chap10-Ordered%20-%20Solutions.pdf" target="_blank" class="answer-link">Answers</a>
-                    </div>
-                </div>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/time-based-data.pdf" target="_blank" class="question-part">9. Time Based Data</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Chap10-Ordered%20-%20Solutions.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <div class="resource-content">
-                    <div class="question-section">
-                        <div class="chapter-number">10.</div>
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/perpetuity.pdf" target="_blank" class="question-title">Perpetuity, Sinking Funds & EMI</a>
-                    </div>
-                    <div class="answer-section">
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/perpetuity.pdf" target="_blank" class="answer-link">Answers</a>
-                    </div>
-                </div>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/perpetuity.pdf" target="_blank" class="question-part">10. Perpetuity, Sinking Funds & EMI</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/perpetuity.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <div class="resource-content">
-                    <div class="question-section">
-                        <div class="chapter-number">11.</div>
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/cagr.pdf" target="_blank" class="question-title">CAGR & Depreciation</a>
-                    </div>
-                    <div class="answer-section">
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/cagr.pdf" target="_blank" class="answer-link">Answers</a>
-                    </div>
-                </div>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/cagr.pdf" target="_blank" class="question-part">11. CAGR & Depreciation</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/cagr.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <div class="resource-content">
-                    <div class="question-section">
-                        <div class="chapter-number">12.</div>
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/LPP.pdf" target="_blank" class="question-title">Linear Programming</a>
-                    </div>
-                    <div class="answer-section">
-                        <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/LPP.pdf" target="_blank" class="answer-link">Answers</a>
-                    </div>
-                </div>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/LPP.pdf" target="_blank" class="question-part">12. Linear Programming</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/LPP.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
         </ul>
-        
-        <footer class="footer">
-            <p>© 2025 CBSE Class 12 Applied Maths Question Bank</p>
-            <p>Optimized for mobile learning</p>
-        </footer>
     </div>
-
-    <script>
-        // Add smooth scrolling for better mobile experience
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add touch feedback for resource items
-            const resourceItems = document.querySelectorAll('.resource-item');
-            
-            resourceItems.forEach(item => {
-                item.addEventListener('touchstart', function() {
-                    this.style.transform = 'scale(0.98)';
-                });
-                
-                item.addEventListener('touchend', function() {
-                    this.style.transform = '';
-                });
-            });
-            
-            // Add visual feedback when links are clicked
-            const links = document.querySelectorAll('a');
-            links.forEach(link => {
-                link.addEventListener('touchstart', function() {
-                    this.style.opacity = '0.7';
-                });
-                
-                link.addEventListener('touchend', function() {
-                    this.style.opacity = '';
-                });
-            });
-            
-            // Add swipe navigation hint for mobile users
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            document.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].screenX;
-            });
-            
-            document.addEventListener('touchend', function(e) {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            });
-            
-            function handleSwipe() {
-                // Swipe right to left - could be used for navigation in future
-                if (touchEndX < touchStartX - 50) {
-                    // Could implement next page navigation here
-                }
-                
-                // Swipe left to right - could be used for navigation in future
-                if (touchEndX > touchStartX + 50) {
-                    // Could implement previous page navigation here
-                }
-            }
-        });
-    </script>
 </body>
 </html>
