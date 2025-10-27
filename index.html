@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources</title>
+    <title>CBSE Class 12 Applied Maths Question Bank</title>
 
-    <!-- Font Import: Space Grotesk -->
+    <!-- Font Imports -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Source+Serif+4:ital,wght@1,400&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -18,16 +18,13 @@
         }
         
         body {
-            /* Using Space Grotesk font with a standard sans-serif fallback */
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: #FFFFFF;
-            color: #000000;
-            padding: 30px 15px;
-            line-height: 1.5;
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 40px 20px;
+            line-height: 1.6;
 
-            /* Dithered Background Effect */
-            /* This creates a subtle 2x2 pixel pattern for a minimal, retro feel */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='1' height='1' fill='rgba(0,0,0,0.05)'/%3E%3Crect x='1' y='1' width='1' height='1' fill='rgba(0,0,0,0.05)'/%3E%3C/svg%3E");
+            /* Dithered Background Effect on a Dark Background */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='1' height='1' fill='rgba(255,255,255,0.05)'/%3E%3Crect x='1' y='1' width='1' height='1' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
         }
         
         .container {
@@ -36,78 +33,92 @@
         }
         
         h1 {
-            font-size: 1.8rem;
+            /* Using Space Grotesk for the main heading */
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 30px;
-            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
         }
 
-        h2 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #000000;
-            padding-bottom: 8px;
+        .description {
+            /* Using a classic Serif font for the description */
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-style: italic;
+            color: #cccccc;
+            margin-bottom: 8px;
+            max-width: 700px;
         }
         
         .resource-list {
             list-style: none;
+            margin-top: 40px;
         }
         
         .resource-item {
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            /* Using IBM Plex Mono for the chapter list */
+            font-family: 'IBM Plex Mono', monospace;
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 18px;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #00FF00; /* Terminal green */
         }
         
-        /* This ensures the last item IN EACH LIST has no bottom border */
-        .resource-list .resource-item:last-child {
-            border-bottom: none;
+        .question-part {
+            flex-shrink: 0;
+            padding-right: 0.5em;
         }
         
-        .resource-link {
-            display: block;
-            color: #000000;
+        .dotted-line {
+            flex-grow: 1;
+            border-bottom: 3px dotted #00FF00;
+            transform: translateY(-6px);
+        }
+        
+        .answer-part {
+            flex-shrink: 0;
+            padding-left: 0.5em;
+        }
+
+        .question-part,
+        .answer-part {
+            color: #00FF00;
             text-decoration: none;
             transition: opacity 0.2s ease-in-out;
         }
         
-        .resource-link:hover {
-            opacity: 0.6;
+        .question-part:hover,
+        .answer-part:hover {
+            opacity: 0.7;
         }
         
-        .file-name {
-            font-weight: 500;
-            word-break: break-word;
-        }
-        
-        /* Mobile-specific adjustments */
+        /* === MOBILE COMPATIBILITY STYLES === */
         @media (max-width: 600px) {
             body {
-                padding: 20px 15px;
+                padding: 30px 15px;
             }
             
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
                 margin-bottom: 25px;
             }
 
-            h2 {
-                font-size: 1.1rem;
-                margin-top: 30px;
-                margin-bottom: 15px;
+            .description {
+                font-size: 0.9rem;
             }
-            
+
             .resource-item {
-                margin-bottom: 12px;
-                padding-bottom: 12px;
+                font-size: 1.1rem;
+                margin-bottom: 15px;
             }
         }
         
         /* Touch-friendly adjustments for a better mobile experience */
         @media (hover: none) {
-            .resource-link:active {
+            .question-part:active,
+            .answer-part:active {
                 opacity: 0.5;
             }
         }
@@ -115,149 +126,72 @@
 </head>
 <body>
     <div class="container">
-        <h1>Class 12 Applied Maths Question Bank</h1>
-        
-        <!-- Questions Section -->
-        <h2>Questions</h2>
-        <ul class="resource-list">
-            <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/1.Modulo%20Operator.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">1. Numeral Applications</div>
-                </a>
-            </li>
-            <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Linear%20Inequalities.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">2. Linear Inequalities</div>
-                </a>
-            </li>
-            <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Matrices.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">3. Matrices</div>
-                </a>
-            </li>
-            <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Determinants.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">4. Determinants</div>
-                </a>
-            </li>
-            <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/2.Differentiation.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">5. Differentiation & Its Applications</div>
-                </a>
-            </li>
-            <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/integrals.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">6. Integrals & Its Applications</div>
-                </a>
-            </li>
-            <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/3.Probability.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">7. Probability</div>
-                </a>
-            </li>
-            <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/4.Inferential%20Stats.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">8. Inferential Stats</div>
-                </a>
-            </li>
-            </li>
-            <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/time-based-data.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">9. Time Based Data</div>
-                </a>
-            </li>
-             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/perpetuity.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">10. Perpetuity, Sinking Funds & EMI</div>
-                </a>
-            </li>
-            <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/cagr.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">11. CAGR & Depreciation</div>
-                </a>
-            </li>
-            <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/LPP.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">12. Linear Programming</div>
-                </a>
-            </li>
-        </ul>
+        <h1>CBSE Class 12 Applied Maths Question Bank</h1>
+        <p class="description">The question bank consist of questions from all Board Questions Papers and Sample Papers from 2022 to 2025</p>
+        <p class="description">Utmost care is taken to strictly focus on CBSE syllabus of A.Y. 2025-26</p>
 
-        <!-- Answers Section -->
-        <h2>Answers</h2>
         <ul class="resource-list">
-            <!-- IMPORTANT: Please verify these links and change them if necessary -->
             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/1.Modulo.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">1. Numeral Applications</div>
-                </a>
-            </li>
-            <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Linear%20inequalities.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">2. Linear Inequalities</div>
-                </a>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/1.Modulo%20Operator.pdf" target="_blank" class="question-part">1. Numerical Application</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/1.Modulo.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/matrices.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">3. Matrices</div>
-                </a>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Linear%20Inequalities.pdf" target="_blank" class="question-part">2. Linear Inequalities</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Linear%20inequalities.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/determinants.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">4. Determinants</div>
-                </a>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Matrices.pdf" target="_blank" class="question-part">3. Matrices</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/matrices.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/2.Differentiation.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">5. Differentiation & Its Applications</div>
-                </a>
-            </li>
-             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Integrals.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">6. Integrals & Its Applications</div>
-                </a>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Determinants.pdf" target="_blank" class="question-part">4. Determinants</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/determinants.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/3.Probability.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">7. Probability</div>
-                </a>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/2.Differentiation.pdf" target="_blank" class="question-part">5. Differentiation & Its Applications</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/2.Differentiation.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/4.inferential%20stats.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">8. Inferential Stats</div>
-                </a>
-            </li>
-            </li>
-            <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Chap10-Ordered%20-%20Solutions.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">9. Time Based Data</div>
-                </a>
-            </li>
-             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/perpetuity.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">10. Perpetuity, Sinking Funds & EMI</div>
-                </a>
-            </li>
-             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/cagr.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">11. CAGR & Depreciation</div>
-                </a>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/integrals.pdf" target="_blank" class="question-part">6. Integrals & Its Applications</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Integrals.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
             <li class="resource-item">
-                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/LPP.pdf" target="_blank" class="resource-link">
-                    <div class="file-name">12. Linear Programming</div>
-                </a>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/3.Probability.pdf" target="_blank" class="question-part">7. Probability</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/3.Probability.pdf" target="_blank" class="answer-part">[Answers]</a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/4.Inferential%20Stats.pdf" target="_blank" class="question-part">8. Inferential Stats</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/4.inferential%20stats.pdf" target="_blank" class="answer-part">[Answers]</a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/time-based-data.pdf" target="_blank" class="question-part">9. Time Based Data</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Chap10-Ordered%20-%20Solutions.pdf" target="_blank" class="answer-part">[Answers]</a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/perpetuity.pdf" target="_blank" class="question-part">10. Perpetuity, Sinking Funds & EMI</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/perpetuity.pdf" target="_blank" class="answer-part">[Answers]</a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/cagr.pdf" target="_blank" class="question-part">11. CAGR & Depreciation</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/cagr.pdf" target="_blank" class="answer-part">[Answers]</a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/LPP.pdf" target="_blank" class="question-part">12. Linear Programming</a>
+                <span class="dotted-line"></span>
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/LPP.pdf" target="_blank" class="answer-part">[Answers]</a>
             </li>
         </ul>
     </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
