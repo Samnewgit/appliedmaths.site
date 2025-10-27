@@ -17,6 +17,10 @@
             box-sizing: border-box;
         }
         
+        html, body {
+            height: 100%;
+        }
+
         body {
             background-color: #000000;
             color: #FFFFFF;
@@ -35,7 +39,8 @@
         h1 {
             /* Using Space Grotesk for the main heading */
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
+            /* responsive heading size */
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
             font-weight: 700;
             margin-bottom: 20px;
             letter-spacing: -1px;
@@ -48,44 +53,62 @@
             color: #cccccc;
             margin-bottom: 8px;
             max-width: 700px;
+            font-size: 1rem;
         }
         
         .resource-list {
             list-style: none;
             margin-top: 40px;
+            padding: 0;
         }
         
         .resource-item {
             /* Using IBM Plex Mono for the chapter list */
             font-family: 'IBM Plex Mono', monospace;
             display: flex;
-            align-items: baseline;
+            align-items: center;
+            gap: 12px;
             margin-bottom: 18px;
-            font-size: 1.5rem;
+            font-size: clamp(1.05rem, 2.2vw, 1.5rem);
             font-weight: 500;
             color: #00FF00; /* Terminal green */
+            line-height: 1.25;
+            /* allow long titles to wrap instead of overflowing */
+            word-break: break-word;
+            hyphens: auto;
+            /* ensure the dotted-line uses remaining space but not overflow */
+            min-height: 1rem;
         }
         
         .question-part {
-            flex-shrink: 0;
+            flex-shrink: 1;
             padding-right: 0.5em;
+            text-decoration: none;
+            /* allow the question text to wrap to multiple lines */
+            white-space: normal;
+            display: inline-block;
+            max-width: 100%;
         }
         
         .dotted-line {
             flex-grow: 1;
             border-bottom: 3px dotted #00FF00;
+            /* keep dotted-line vertically centered with the text on wide screens */
             transform: translateY(-6px);
+            min-width: 12px;
+            /* prevent the dotted line from collapsing to zero width */
+            width: auto;
         }
         
         .answer-part {
             flex-shrink: 0;
             padding-left: 0.5em;
+            text-decoration: none;
         }
 
         .question-part,
         .answer-part {
             color: #00FF00;
-            text-decoration: none;
             transition: opacity 0.2s ease-in-out;
         }
         
@@ -97,21 +120,47 @@
         /* Mobile-specific adjustments */
         @media (max-width: 600px) {
             body {
-                padding: 30px 15px;
+                padding: 24px 14px;
             }
             
             h1 {
-                font-size: 1.8rem;
-                margin-bottom: 25px;
+                margin-bottom: 18px;
             }
 
             .description {
-                font-size: 0.9rem;
+                font-size: 0.95rem;
+                margin-bottom: 10px;
             }
 
             .resource-item {
-                font-size: 1.1rem;
-                margin-bottom: 15px;
+                /* stack the item vertically on small screens so nothing feels crammed */
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                margin-bottom: 14px;
+                font-size: 1.05rem;
+                padding: 6px 0;
+            }
+
+            .question-part {
+                /* slightly larger line-height for wrapped text */
+                line-height: 1.3;
+                padding-right: 0;
+            }
+
+            .dotted-line {
+                /* dashed line becomes a full-width separator between question and answer */
+                transform: none;
+                width: 100%;
+                border-bottom-width: 2px;
+                margin: 4px 0;
+            }
+
+            .answer-part {
+                /* move answers to their own line and align them to the left to avoid overlap */
+                padding-left: 0;
+                margin-top: 2px;
+                align-self: flex-start;
             }
         }
         
