@@ -1,617 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MHE59K42MV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MHE59K42MV');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applied Maths 12 | Baggage Claim</title>
+    <title>Resources</title>
 
-    <!-- Fonts -->
+    <!-- Font Import: Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --bg-color: #f4f1ea;
-            --text-dark: #1a1a1a;
-            --paper-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23f4f1ea'/%3E%3Crect width='1' height='1' fill='%23e0dbd0'/%3E%3C/svg%3E");
-            
-            /* Scheme 1: The Classic Airmail (Blue/Red) */
-            --c1-main: #2b4c7e;
-            --c1-accent: #d14949;
-            --c1-bg: #e6eff6;
-
-            /* Scheme 2: The Tokyo (Orange/Navy) */
-            --c2-main: #e67e22;
-            --c2-accent: #2c3e50;
-            --c2-bg: #fae5d3;
-
-            /* Scheme 3: The Military (Green/Beige) */
-            --c3-main: #556b2f;
-            --c3-accent: #8fbc8f;
-            --c3-bg: #f0f5e5;
-
-            /* Scheme 4: The Retro LAX (Navy/Pink) */
-            --c4-main: #2c3e50;
-            --c4-accent: #e6a8d7;
-            --c4-bg: #f5eef8;
-
-            /* Scheme 5: The Nordic (New! - Slate/Mustard) */
-            --c5-main: #37474f;
-            --c5-accent: #fbc02d;
-            --c5-bg: #cfd8dc;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            background-color: var(--bg-color);
-            background-image: var(--paper-texture);
-            font-family: 'Work Sans', sans-serif;
-            color: var(--text-dark);
-            padding: 40px 20px;
-            min-height: 100vh;
-        }
+            /* Using Space Grotesk font with a standard sans-serif fallback */
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            padding: 30px 15px;
+            line-height: 1.5;
 
-        /* HEADER STYLES */
-        .header-section {
-            text-align: center;
-            margin-bottom: 50px;
-            text-transform: uppercase;
+            /* Dithered Background Effect */
+            /* This creates a subtle 2x2 pixel pattern for a minimal, retro feel */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='1' height='1' fill='rgba(0,0,0,0.05)'/%3E%3Crect x='1' y='1' width='1' height='1' fill='rgba(0,0,0,0.05)'/%3E%3C/svg%3E");
         }
-
-        h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3rem;
-            letter-spacing: 2px;
-            color: #1a1a1a;
-            border-top: 4px double #1a1a1a;
-            border-bottom: 4px double #1a1a1a;
-            display: inline-block;
-            padding: 10px 30px;
-            transform: rotate(-2deg);
-            background: #fff;
-            box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
-        }
-
-        p.subtitle {
-            font-family: 'Space Mono', monospace;
-            margin-top: 15px;
-            font-size: 0.9rem;
-            opacity: 0.7;
-            font-weight: 700;
-        }
-
-        /* RESPONSIVE GRID LAYOUT */
-        .ticket-grid {
-            display: grid;
-            /* Changed minmax to 280px to accommodate smaller mobile screens (iPhone SE, etc) */
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
+        
+        .container {
+            max-width: 800px;
             margin: 0 auto;
         }
-
-        /* TICKET CARD STYLES */
-        .ticket {
-            background: white;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-        }
-
-        .ticket:hover {
-            transform: translateY(-5px);
-            box-shadow: 10px 10px 25px rgba(0,0,0,0.15);
-        }
-
-        /* PUNCH HOLE EFFECT */
-        .ticket::before {
-            content: '';
-            position: absolute;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 14px;
-            height: 14px;
-            background-color: var(--bg-color);
-            background-image: var(--paper-texture); /* Blend hole with body bg */
-            border-radius: 50%;
-            box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
-            z-index: 10;
-        }
-
-        /* CARD HEADER (City Code) */
-        .ticket-header {
-            padding: 35px 20px 20px;
-            text-align: center;
-            border-bottom: 2px dashed rgba(0,0,0,0.15);
-            position: relative;
-        }
-
-        .airport-code {
-            font-family: 'Oswald', sans-serif;
-            font-size: 4.5rem;
-            line-height: 1;
+        
+        h1 {
+            font-size: 1.8rem;
             font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 8px;
+        }
+        
+        .resource-list {
+            list-style: none;
+        }
+        
+        .resource-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        }
+        
+        /* This ensures the last item IN EACH LIST has no bottom border */
+        .resource-list .resource-item:last-child {
+            border-bottom: none;
+        }
+        
+        .resource-link {
             display: block;
-            margin-bottom: 5px;
-            letter-spacing: -1px;
-        }
-
-        .chapter-name {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 700;
-        }
-
-        .flight-no {
-            position: absolute;
-            top: 12px;
-            right: 15px;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            opacity: 0.6;
-            letter-spacing: 1px;
-        }
-
-        /* CARD BODY */
-        .ticket-body {
-            padding: 25px 20px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex-grow: 1;
-            background-color: rgba(255,255,255,0.4);
-        }
-
-        .route {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            font-family: 'Oswald', sans-serif;
-            color: #444;
-            font-size: 1.1rem;
-            opacity: 0.8;
-        }
-
-        .plane-icon {
-            transform: rotate(90deg);
-            font-size: 0.9rem;
-            color: #1a1a1a;
-        }
-
-        /* BUTTONS */
-        .actions {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .btn {
+            color: #000000;
             text-decoration: none;
-            text-align: center;
-            padding: 14px 5px; /* Taller tap target for mobile */
-            border-radius: 6px;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            border: 2px solid transparent;
-            transition: all 0.2s;
-            cursor: pointer;
-            line-height: 1.2;
+            transition: opacity 0.2s ease-in-out;
         }
-
-        /* --- COLOR SCHEME CYCLING (Now with 5 Variations) --- */
         
-        /* Style 1 */
-        .ticket:nth-child(5n+1) { background-color: var(--c1-bg); }
-        .ticket:nth-child(5n+1) .airport-code { color: var(--c1-main); }
-        .ticket:nth-child(5n+1) .btn-q { background: var(--c1-main); color: white; }
-        .ticket:nth-child(5n+1) .btn-a { border-color: var(--c1-main); color: var(--c1-main); }
-        .ticket:nth-child(5n+1) .btn-a:hover { background: var(--c1-main); color: white; }
+        .resource-link:hover {
+            opacity: 0.6;
+        }
         
-        /* Style 2 */
-        .ticket:nth-child(5n+2) { background-color: var(--c2-bg); }
-        .ticket:nth-child(5n+2) .airport-code { color: var(--c2-main); }
-        .ticket:nth-child(5n+2) .btn-q { background: var(--c2-main); color: white; }
-        .ticket:nth-child(5n+2) .btn-a { border-color: var(--c2-main); color: var(--c2-main); }
-        .ticket:nth-child(5n+2) .btn-a:hover { background: var(--c2-main); color: white; }
-
-        /* Style 3 */
-        .ticket:nth-child(5n+3) { background-color: var(--c3-bg); }
-        .ticket:nth-child(5n+3) .airport-code { color: var(--c3-main); }
-        .ticket:nth-child(5n+3) .btn-q { background: var(--c3-main); color: white; }
-        .ticket:nth-child(5n+3) .btn-a { border-color: var(--c3-main); color: var(--c3-main); }
-        .ticket:nth-child(5n+3) .btn-a:hover { background: var(--c3-main); color: white; }
-
-        /* Style 4 */
-        .ticket:nth-child(5n+4) { background-color: var(--c4-bg); }
-        .ticket:nth-child(5n+4) .airport-code { color: var(--c4-main); }
-        .ticket:nth-child(5n+4) .btn-q { background: var(--c4-main); color: white; }
-        .ticket:nth-child(5n+4) .btn-a { border-color: var(--c4-main); color: var(--c4-main); }
-        .ticket:nth-child(5n+4) .btn-a:hover { background: var(--c4-main); color: white; }
-
-        /* Style 5 (The New Nordic Scheme) */
-        .ticket:nth-child(5n+5) { background-color: var(--c5-bg); }
-        .ticket:nth-child(5n+5) .airport-code { color: var(--c5-main); }
-        .ticket:nth-child(5n+5) .btn-q { background: var(--c5-main); color: white; }
-        .ticket:nth-child(5n+5) .btn-a { border-color: var(--c5-main); color: var(--c5-main); }
-        .ticket:nth-child(5n+5) .btn-a:hover { background: var(--c5-main); color: white; }
-
-        /* Hover effects for primary buttons */
-        .btn-q:hover { opacity: 0.9; transform: scale(1.02); }
-
-        /* Airmail Striped Border Effect (Applied to Scheme 1) */
-        .ticket:nth-child(5n+1)::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: repeating-linear-gradient(
-                45deg,
-                var(--c1-accent),
-                var(--c1-accent) 10px,
-                #fff 10px,
-                #fff 20px,
-                var(--c1-main) 20px,
-                var(--c1-main) 30px,
-                #fff 30px,
-                #fff 40px
-            );
+        .file-name {
+            font-weight: 500;
+            word-break: break-word;
         }
-
-        /* Checkered Bar Effect (Applied to Scheme 2 & 5) */
-        .ticket:nth-child(5n+2)::after, .ticket:nth-child(5n+5)::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            opacity: 0.5;
-            background-image: linear-gradient(90deg, #000 50%, transparent 50%);
-            background-size: 20px 100%;
-        }
-
-        .barcode {
-            height: 25px;
-            background-image: linear-gradient(to right, #000 0%, #000 10%, transparent 10%, transparent 15%, #000 15%, #000 20%, transparent 20%, transparent 25%, #000 25%, #000 50%, transparent 50%, transparent 55%, #000 55%, #000 60%, transparent 60%, transparent 65%, #000 65%, #000 100%);
-            margin-top: 15px;
-            opacity: 0.2;
-            width: 100%;
-        }
-
-        /* MOBILE SPECIFIC ADJUSTMENTS */
+        
+        /* Mobile-specific adjustments */
         @media (max-width: 600px) {
             body {
                 padding: 20px 15px;
             }
+            
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 25px;
+            }
 
-            h1 { 
-                font-size: 2rem; 
-                padding: 8px 20px;
+            h2 {
+                font-size: 1.1rem;
+                margin-top: 30px;
+                margin-bottom: 15px;
             }
             
-            p.subtitle {
-                font-size: 0.8rem;
+            .resource-item {
+                margin-bottom: 12px;
+                padding-bottom: 12px;
             }
-
-            .ticket-grid {
-                gap: 20px;
-            }
-
-            .airport-code { 
-                font-size: 3.8rem; /* Slightly smaller to prevent wrapping */
-            }
-
-            .chapter-name {
-                font-size: 0.8rem;
-            }
-
-            .ticket-header {
-                padding: 25px 15px 15px;
-            }
-            
-            .ticket-body {
-                padding: 15px;
-            }
-
-            /* Make buttons stack on very small screens if needed, 
-               but grid usually works better for touch targets */
-            .btn {
-                font-size: 0.8rem; /* Larger text for readability */
+        }
+        
+        /* Touch-friendly adjustments for a better mobile experience */
+        @media (hover: none) {
+            .resource-link:active {
+                opacity: 0.5;
             }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Class 12 Applied Maths Question Bank</h1>
+        
+        <!-- Questions Section -->
+        <h2>Questions</h2>
+        <ul class="resource-list">
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/1.Modulo%20Operator.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">1. Numeral Applications</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Linear%20Inequalities.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">2. Linear Inequalities</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Matrices.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">3. Matrices</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Determinants.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">4. Determinants</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/2.Differentiation.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">5. Differentiation & Its Applications</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/integrals.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">6. Integrals & Its Applications</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/3.Probability.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">7. Probability</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/4.Inferential%20Stats.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">8. Inferential Stats</div>
+                </a>
+            </li>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/time-based-data.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">9. Time Based Data</div>
+                </a>
+            </li>
+             <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/perpetuity.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">10. Perpetuity, Sinking Funds & EMI</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/cagr.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">11. CAGR & Depreciation</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/LPP.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">12. Linear Programming</div>
+                </a>
+            </li>
+        </ul>
 
-    <div class="header-section">
-        <h1>APPLIED MATHS 12</h1>
-        <p class="subtitle">DESTINATION: BOARD EXAMS</p>
+        <!-- Answers Section -->
+        <h2>Answers</h2>
+        <ul class="resource-list">
+            <!-- IMPORTANT: Please verify these links and change them if necessary -->
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/1.Modulo.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">1. Numeral Applications</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Linear%20inequalities.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">2. Linear Inequalities</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/matrices.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">3. Matrices</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/determinants.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">4. Determinants</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/2.Differentiation.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">5. Differentiation & Its Applications</div>
+                </a>
+            </li>
+             <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Integrals.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">6. Integrals & Its Applications</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/3.Probability.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">7. Probability</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/4.inferential%20stats.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">8. Inferential Stats</div>
+                </a>
+            </li>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Chap10-Ordered%20-%20Solutions.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">9. Time Based Data</div>
+                </a>
+            </li>
+             <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/perpetuity.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">10. Perpetuity, Sinking Funds & EMI</div>
+                </a>
+            </li>
+             <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/cagr.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">11. CAGR & Depreciation</div>
+                </a>
+            </li>
+            <li class="resource-item">
+                <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/LPP.pdf" target="_blank" class="resource-link">
+                    <div class="file-name">12. Linear Programming</div>
+                </a>
+            </li>
+        </ul>
     </div>
-
-    <div class="ticket-grid">
-
-        <!-- Ticket 1: Numeral Applications -->
-        <div class="ticket">
-            <div class="flight-no">FLT-01</div>
-            <div class="ticket-header">
-                <span class="airport-code">NUM</span>
-                <span class="chapter-name">Numeral Applications</span>
-            </div>
-            <div class="ticket-body">
-                <div class="route">
-                    <span>START</span> 
-                    <span class="plane-icon">✈</span> 
-                    <span>END</span>
-                </div>
-                <div class="actions">
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/1.Modulo%20Operator.pdf" target="_blank" class="btn btn-q">Question</a>
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/1.Modulo.pdf" target="_blank" class="btn btn-a">Answer</a>
-                </div>
-                <div class="barcode"></div>
-            </div>
-        </div>
-
-        <!-- Ticket 2: Linear Inequalities -->
-        <div class="ticket">
-            <div class="flight-no">FLT-02</div>
-            <div class="ticket-header">
-                <span class="airport-code">INEQ</span>
-                <span class="chapter-name">Linear Inequalities</span>
-            </div>
-            <div class="ticket-body">
-                <div class="route">
-                    <span>X</span> 
-                    <span class="plane-icon">✈</span> 
-                    <span>Y</span>
-                </div>
-                <div class="actions">
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Linear%20Inequalities.pdf" target="_blank" class="btn btn-q">Question</a>
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Linear%20inequalities.pdf" target="_blank" class="btn btn-a">Answer</a>
-                </div>
-                <div class="barcode"></div>
-            </div>
-        </div>
-
-        <!-- Ticket 3: Matrices -->
-        <div class="ticket">
-            <div class="flight-no">FLT-03</div>
-            <div class="ticket-header">
-                <span class="airport-code">MTX</span>
-                <span class="chapter-name">Matrices</span>
-            </div>
-            <div class="ticket-body">
-                <div class="route">
-                    <span>ROW</span> 
-                    <span class="plane-icon">✈</span> 
-                    <span>COL</span>
-                </div>
-                <div class="actions">
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Matrices.pdf" target="_blank" class="btn btn-q">Question</a>
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/matrices.pdf" target="_blank" class="btn btn-a">Answer</a>
-                </div>
-                <div class="barcode"></div>
-            </div>
-        </div>
-
-        <!-- Ticket 4: Determinants -->
-        <div class="ticket">
-            <div class="flight-no">FLT-04</div>
-            <div class="ticket-header">
-                <span class="airport-code">DET</span>
-                <span class="chapter-name">Determinants</span>
-            </div>
-            <div class="ticket-body">
-                <div class="route">
-                    <span>| A |</span> 
-                    <span class="plane-icon">✈</span> 
-                    <span>VAL</span>
-                </div>
-                <div class="actions">
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/Determinants.pdf" target="_blank" class="btn btn-q">Question</a>
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/determinants.pdf" target="_blank" class="btn btn-a">Answer</a>
-                </div>
-                <div class="barcode"></div>
-            </div>
-        </div>
-
-        <!-- Ticket 5: Differentiation (This will use the new Nordic Scheme) -->
-        <div class="ticket">
-            <div class="flight-no">FLT-05</div>
-            <div class="ticket-header">
-                <span class="airport-code">DIFF</span>
-                <span class="chapter-name">Differentiation</span>
-            </div>
-            <div class="ticket-body">
-                <div class="route">
-                    <span>f(x)</span> 
-                    <span class="plane-icon">✈</span> 
-                    <span>f'(x)</span>
-                </div>
-                <div class="actions">
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/2.Differentiation.pdf" target="_blank" class="btn btn-q">Question</a>
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/2.Differentiation.pdf" target="_blank" class="btn btn-a">Answer</a>
-                </div>
-                <div class="barcode"></div>
-            </div>
-        </div>
-
-        <!-- Ticket 6: Integrals -->
-        <div class="ticket">
-            <div class="flight-no">FLT-06</div>
-            <div class="ticket-header">
-                <span class="airport-code">INTG</span>
-                <span class="chapter-name">Integrals</span>
-            </div>
-            <div class="ticket-body">
-                <div class="route">
-                    <span>AREA</span> 
-                    <span class="plane-icon">✈</span> 
-                    <span>CURVE</span>
-                </div>
-                <div class="actions">
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/integrals.pdf" target="_blank" class="btn btn-q">Question</a>
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Integrals.pdf" target="_blank" class="btn btn-a">Answer</a>
-                </div>
-                <div class="barcode"></div>
-            </div>
-        </div>
-
-        <!-- Ticket 7: Probability -->
-        <div class="ticket">
-            <div class="flight-no">FLT-07</div>
-            <div class="ticket-header">
-                <span class="airport-code">PROB</span>
-                <span class="chapter-name">Probability</span>
-            </div>
-            <div class="ticket-body">
-                <div class="route">
-                    <span>P(E)</span> 
-                    <span class="plane-icon">✈</span> 
-                    <span>1.0</span>
-                </div>
-                <div class="actions">
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/3.Probability.pdf" target="_blank" class="btn btn-q">Question</a>
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/3.Probability.pdf" target="_blank" class="btn btn-a">Answer</a>
-                </div>
-                <div class="barcode"></div>
-            </div>
-        </div>
-
-        <!-- Ticket 8: Inferential Stats -->
-        <div class="ticket">
-            <div class="flight-no">FLT-08</div>
-            <div class="ticket-header">
-                <span class="airport-code">STAT</span>
-                <span class="chapter-name">Inferential Stats</span>
-            </div>
-            <div class="ticket-body">
-                <div class="route">
-                    <span>DATA</span> 
-                    <span class="plane-icon">✈</span> 
-                    <span>T-TEST</span>
-                </div>
-                <div class="actions">
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/4.Inferential%20Stats.pdf" target="_blank" class="btn btn-q">Question</a>
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/4.inferential%20stats.pdf" target="_blank" class="btn btn-a">Answer</a>
-                </div>
-                <div class="barcode"></div>
-            </div>
-        </div>
-
-        <!-- Ticket 9: Time Based Data -->
-        <div class="ticket">
-            <div class="flight-no">FLT-09</div>
-            <div class="ticket-header">
-                <span class="airport-code">TIME</span>
-                <span class="chapter-name">Time Based Data</span>
-            </div>
-            <div class="ticket-body">
-                <div class="route">
-                    <span>PAST</span> 
-                    <span class="plane-icon">✈</span> 
-                    <span>FUTURE</span>
-                </div>
-                <div class="actions">
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/time-based-data.pdf" target="_blank" class="btn btn-q">Question</a>
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/Chap10-Ordered%20-%20Solutions.pdf" target="_blank" class="btn btn-a">Answer</a>
-                </div>
-                <div class="barcode"></div>
-            </div>
-        </div>
-
-        <!-- Ticket 10: Perpetuity & EMI -->
-        <div class="ticket">
-            <div class="flight-no">FLT-10</div>
-            <div class="ticket-header">
-                <span class="airport-code">EMI</span>
-                <span class="chapter-name">Perpetuity & EMI</span>
-            </div>
-            <div class="ticket-body">
-                <div class="route">
-                    <span>LOAN</span> 
-                    <span class="plane-icon">✈</span> 
-                    <span>PAID</span>
-                </div>
-                <div class="actions">
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/perpetuity.pdf" target="_blank" class="btn btn-q">Question</a>
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/perpetuity.pdf" target="_blank" class="btn btn-a">Answer</a>
-                </div>
-                <div class="barcode"></div>
-            </div>
-        </div>
-
-        <!-- Ticket 11: CAGR -->
-        <div class="ticket">
-            <div class="flight-no">FLT-11</div>
-            <div class="ticket-header">
-                <span class="airport-code">CAGR</span>
-                <span class="chapter-name">CAGR & Depreciation</span>
-            </div>
-            <div class="ticket-body">
-                <div class="route">
-                    <span>VAL</span> 
-                    <span class="plane-icon">✈</span> 
-                    <span>GROWTH</span>
-                </div>
-                <div class="actions">
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/cagr.pdf" target="_blank" class="btn btn-q">Question</a>
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/cagr.pdf" target="_blank" class="btn btn-a">Answer</a>
-                </div>
-                <div class="barcode"></div>
-            </div>
-        </div>
-
-        <!-- Ticket 12: LPP -->
-        <div class="ticket">
-            <div class="flight-no">FLT-12</div>
-            <div class="ticket-header">
-                <span class="airport-code">LPP</span>
-                <span class="chapter-name">Linear Programming</span>
-            </div>
-            <div class="ticket-body">
-                <div class="route">
-                    <span>MIN</span> 
-                    <span class="plane-icon">✈</span> 
-                    <span>MAX</span>
-                </div>
-                <div class="actions">
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/question/LPP.pdf" target="_blank" class="btn btn-q">Question</a>
-                    <a href="https://pub-cad59b6e942f4e3ebb3ce5578987de55.r2.dev/g12-com-am/answers/LPP.pdf" target="_blank" class="btn btn-a">Answer</a>
-                </div>
-                <div class="barcode"></div>
-            </div>
-        </div>
-
-    </div>
-
 </body>
 </html>
-
